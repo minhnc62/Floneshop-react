@@ -8,11 +8,6 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Shop from "./pages/Shop";
 
-
-
-
-
-
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
