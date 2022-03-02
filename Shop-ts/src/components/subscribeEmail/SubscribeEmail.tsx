@@ -2,6 +2,13 @@ import styled from "styled-components";
 import { md, xs } from "../../rootStyledComponent";
 import SubscriptionForm from "./SubscriptionForm";
 const Subscribe_Area = styled.div`
+.container-fluid{
+  width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
   &.pt-100 {
     padding-top: 10rem;
     @media ${xs} {
@@ -17,9 +24,7 @@ const Subscribe_Area = styled.div`
   .subscribe-style-3 {
     h2 {
       font-size: 48px;
-
       margin: 0 0 23px;
-
       color: #010101;
       @media ${xs} {
         font-size: 35px;
@@ -41,14 +46,11 @@ const Subscribe_Area = styled.div`
   }
 `;
 
-// interface mailState{
-//     mailchimpUrl:string
 
-// }
 
 const SubscribeEmail = () => {
   return (
-    <Subscribe_Area className={`subscribe-area-3 pt-100 pb-100 `}>
+    <Subscribe_Area className= "pt-100 pb-100 ">
       <div className="container-fluid">
         <div className="row">
           <div className="col-xl-5 col-lg-7 col-md-10 m-auto">

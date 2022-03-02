@@ -11,6 +11,9 @@ import {
   ShoppingOutlined,
   MenuUnfoldOutlined,
 } from "@ant-design/icons";
+import { useAppSelector } from "../../redux/hooks";
+import { selectCart } from "../../redux/cartSlice";
+
 const Headers = styled.header`
   position: fixed;
   z-index: 999;
@@ -129,6 +132,8 @@ const menuUser = (
 );
 
 const Header = () => {
+
+  const cart:[] = useAppSelector(selectCart);
   const [visible, setVisible] = useState(false);
   const showDrawer = () => {
     setVisible(true);
@@ -194,7 +199,7 @@ const Header = () => {
               </Col>
               <Col className="icon">
                 <Link to={"/cart"}>
-                  <Badge count={0} showZero offset={[5, 1]}>
+                  <Badge count={cart.length} showZero offset={[5, 1]}>
                     <ShoppingOutlined className="cart" />
                   </Badge>
                 </Link>
