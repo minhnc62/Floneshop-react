@@ -36,6 +36,12 @@ a{
     text-decoration: none!important;
     
 }
+input:focus{
+  outline: none;
+}
+select:focus{
+  outline: none;
+}
 /* 
 @media only screen and (min-width: 1366px) and (max-width: 1600px){
   
@@ -60,11 +66,11 @@ a{
 }
 @media only screen and (min-width: 576px) and (max-width: 767px){
   html{
-    font-size: 45%;
+    font-size: 50%;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 479px){
   html{
-    font-size: 45%;
+    font-size: 50%;
   }
 }

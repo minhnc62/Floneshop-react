@@ -38,6 +38,14 @@ const ShopSize = () => {
               </button>
             </div>
           </li>
+          <li>
+            <div className="sidebar-widget-list-left">
+              <button className="text-uppercase">
+              <Checkbox>XL</Checkbox>
+
+              </button>
+            </div>
+          </li>
          
         </ul>
       </div>

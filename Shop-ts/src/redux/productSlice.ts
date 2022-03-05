@@ -5,7 +5,7 @@ import axios from 'axios';
 const searchProductByTitle: any = createAsyncThunk("search", async (_, thunk: any) => {
 
   const title = thunk.getState().singleProduct.title;
-  return fetch("https://fakeshop-api-json-server.herokuapp.com/products/" + "&s=" + title)
+  return fetch("https://fakeshop-api-json-server.herokuapp.com/products/" + "?q=" + title)
     .then((res) => res.json())
     .then((json) => {
       if (json.Error) {
@@ -39,7 +39,7 @@ const getProductsById: any = createAsyncThunk(
   "products/getById",
   async (payload, { rejectWithValue }) => {
     return axios
-      .get("https://fakestoreapi.com/products/" + payload)
+      .get("https://fakeshop-api-json-server.herokuapp.com/products/" + payload)
       .then((res) => res.data)
       .catch((err) => rejectWithValue(err));
   }
@@ -47,14 +47,19 @@ const getProductsById: any = createAsyncThunk(
 
 
 export interface productState {
+  
  
     id: number,
     title: string,
     price: number,
     description: string,
-    categori: string,
-    image: string,
-    
+    categori: any,
+    image: any,
+    discount:number,
+    new:boolean,
+    color:any,
+    size:any,
+    qty:number,
   
 
 }
@@ -66,15 +71,7 @@ export interface initialState {
   products: [],
   title: string
   singleProduct: any,
-  cartItems: any,
-  cartTotalQuantity: number,
-  cartTotalAmount: number,
-  cartItem:[],
-  cartTotleQuantity: 0,
-  cartTotleAmount: 0,
-
-
-
+  
 }
 
 
@@ -86,8 +83,7 @@ const productSlice: any = createSlice({
     title: "",
     products: [],
     singleProduct: null,
-    cartTotalQuantity: 0,
-    cartTotalAmount: 0,
+
 
   },
   // The `reducers` field lets us define reducers and generate associated actions
@@ -95,7 +91,10 @@ const productSlice: any = createSlice({
 
     changeTitle(state, action) {
       state.title = action.payload;
-    }
+    },
+    
+
+
   },
   extraReducers: (builder) => {
     builder.addCase(getProducts.pending, (state) => {

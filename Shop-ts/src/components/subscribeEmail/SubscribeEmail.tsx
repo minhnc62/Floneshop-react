@@ -55,8 +55,8 @@ const SubscribeEmail = () => {
         <div className="row">
           <div className="col-xl-5 col-lg-7 col-md-10 m-auto">
             <div className={`subscribe-style-3 text-center `}>
-              <h2>Join With Us! </h2>
-              <p>Subscribe to our newsletter to receive news on update</p>
+              <h2>Tham gia với chúng tôi!</h2>
+              <p>Theo dõi chúng tôi để nhận thông tin về các sản phẩm mới</p>
               {/* subscription form */}
               <SubscriptionForm />
             </div>

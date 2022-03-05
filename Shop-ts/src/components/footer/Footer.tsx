@@ -11,19 +11,17 @@ const FooterArea = styled.div`
 `;
 
 const Container = styled.div`
-  padding: 0 5rem;
-  @media ${md} {
-    padding: 0 3rem;
-  }
-  @media ${xs} {
-    padding: 0 1rem;
-  }
-  .copyright {
+  .container-fluid{
+    padding:0 1rem!important;
+    .copyright {
+      font-size:1.4rem;
     margin-bottom: 3rem;
   }
+  }
+  
 `;
 const FooterLogo = styled.div`
-  margin-top: 4rem;
+  
   margin-bottom: 1.2rem;
 `;
 
@@ -50,6 +48,7 @@ const FooterWidget = styled.div`
     color: #313131;
   }
   .footer-list li {
+    font-size:1.4rem;
     margin: 0 0 1.1rem;
     &:hover {
       color: #a749ff;
@@ -65,18 +64,19 @@ const FooterWidget = styled.div`
     margin-left: -130px;
   }
   @media ${xs} {
-    margin-left: 0;
+    margin-left: 1rem;
   }
   @media ${sm} {
     margin-left: -90px;
   }
   @media ${lg} {
-    margin-left: 0;
+    margin-left: 1rem;
   }
   }
 
   .subscribe-style p {
-    margin: 0 0 20px;
+    font-size:1.4rem;
+    margin: 0 0 2rem;
     color: #7a7a7a;
   }
 `;
@@ -125,8 +125,9 @@ const Footer = () => {
   return (
     <FooterArea className="Footer">
       <Container>
+        <div  className="container-fluid">
         <Row>
-          <Col lg={4} sm={8}>
+          <Col lg={4} sm={8} span={24}>
             <div className="copyright ">
               <FooterLogo>
                 <Link to={"/"}>
@@ -136,7 +137,7 @@ const Footer = () => {
               <p>All Rights Reserved</p>
             </div>
           </Col>
-          <Col lg={4} sm={8}>
+          <Col lg={4} sm={8} span={24}>
             <FooterWidget>
               <div className="footer-title">
                 <h3>ABOUT US</h3>
@@ -159,7 +160,7 @@ const Footer = () => {
               </div>
             </FooterWidget>
           </Col>
-          <Col lg={4} sm={8}>
+          <Col lg={4} sm={8} span={24}>
             <FooterWidget>
               <div className="footer-title">
                 <h3>USEFUL LINKS</h3>
@@ -182,7 +183,7 @@ const Footer = () => {
               </div>
             </FooterWidget>
           </Col>
-          <Col lg={4} sm={12}>
+          <Col lg={4} sm={12} span={24}>
             <FooterWidget>
               <div className="footer-title">
                 <h3>FOLLOW US</h3>
@@ -205,7 +206,7 @@ const Footer = () => {
               </div>
             </FooterWidget>
           </Col>
-          <Col lg={8} sm={12}>
+          <Col lg={8} sm={12} span={24}>
             <FooterWidget className="ml-70">
               <div className="footer-title">
                 <h3>FOLLOW US</h3>
@@ -233,6 +234,8 @@ const Footer = () => {
             </FooterWidget>
           </Col>
         </Row>
+        </div>
+        
       </Container>
     </FooterArea>
   );

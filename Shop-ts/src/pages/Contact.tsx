@@ -1,6 +1,6 @@
-import LocationMap from "../../components/contact/LocationMap";
+import LocationMap from "../components/contact/LocationMap";
 import styled from "styled-components";
-import { lg, md, theme_color, xs } from "../../rootStyledComponent";
+import { lg, md, theme_color, xs } from "../rootStyledComponent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPhone,
@@ -13,7 +13,10 @@ import {
   YoutubeOutlined,
   TwitterOutlined,
 } from "@ant-design/icons";
+import { Breadcrumb } from "antd";
+import { Link } from "react-router-dom";
 const Contact_Area = styled.div`
+margin-top:10rem;
   &.pt-100 {
     padding-top: 10rem;
     @media ${xs} {
@@ -27,8 +30,9 @@ const Contact_Area = styled.div`
     }
   }
   .container .contact-map {
+    margin-top:2rem;
     position: relative;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     height: 56rem;
     @media ${xs} {
       height: 40rem;
@@ -204,6 +208,15 @@ export default () => {
   return (
     <Contact_Area className=" pt-100 pb-100">
       <div className="container">
+      <Breadcrumb>
+          <Breadcrumb.Item>
+            <Link to={"/"}>Trang chủ</Link>
+          </Breadcrumb.Item>
+
+          <Breadcrumb.Item>
+            <Link to={"/cart"}>Liên Hệ</Link>
+          </Breadcrumb.Item>
+        </Breadcrumb>
         <div className="contact-map ">
           <LocationMap />
         </div>

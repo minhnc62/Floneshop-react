@@ -131,13 +131,13 @@ const Banner = () => {
       <div className="row no-gutters">
         <div className="col-lg-6 col-md-6">
           <div className="single-banner-2 align_right">
-            <Link to={"/"}>
+            <Link to={"/shop"}>
               <img src="image/banner/banner-4.jpg" alt="banner" />
             </Link>
             <div className="banner-content-2 ">
               <h3>Men Fashion Shop</h3>
               <h4>Choose Your Products Here</h4>
-              <Link to={"/"}>
+              <Link to={"/shop"}>
                 <FontAwesomeIcon icon={faArrowRightLong} />
               </Link>
             </div>
@@ -145,13 +145,13 @@ const Banner = () => {
         </div>
         <div className="col-lg-6 col-md-6">
           <div className="single-banner-2 ">
-            <Link to={"/"}>
+            <Link to={"/shop"}>
               <img src="image/banner/banner-5.jpg" alt="banner" />
             </Link>
             <div className="banner-content-2 ">
               <h3>Men Fashion Shop</h3>
               <h4>Choose Your Products Here</h4>
-              <Link to={"/"}>
+              <Link to={"/shop"}>
                 <FontAwesomeIcon icon={faArrowLeftLong} />
               </Link>
             </div>

@@ -8,7 +8,7 @@ const Subscribe_Form = styled.div`
     position: relative;
     input {
       height: 46px;
-      width: 50rem;
+      max-width: 50rem;
       font-size: 1.4rem;
       text-align: center;
 

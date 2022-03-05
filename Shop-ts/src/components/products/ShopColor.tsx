@@ -23,7 +23,21 @@ const ShopColor = () => {
           <li>
             <div className="sidebar-widget-list-left">
               <button>
-              <Checkbox>Đỏ</Checkbox>
+              <Checkbox>Trắng</Checkbox>
+              </button>
+            </div>
+          </li>
+          <li>
+            <div className="sidebar-widget-list-left">
+              <button>
+              <Checkbox>Đen</Checkbox>
+              </button>
+            </div>
+          </li>
+          <li>
+            <div className="sidebar-widget-list-left">
+              <button>
+              <Checkbox>Nâu</Checkbox>
               </button>
             </div>
           </li>

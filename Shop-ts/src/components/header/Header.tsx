@@ -1,7 +1,7 @@
-import "./header.css";
+
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { Row, Col, Menu, Dropdown, Input, Badge, Drawer, Button } from "antd";
+import { Row, Col, Menu, Dropdown, Input, Badge, Drawer} from "antd";
 import styled from "styled-components";
 import { xl, lg, md, xs } from "../../rootStyledComponent";
 import {
@@ -13,6 +13,7 @@ import {
 } from "@ant-design/icons";
 import { useAppSelector } from "../../redux/hooks";
 import { selectCart } from "../../redux/cartSlice";
+import { selectwishlish } from "../../redux/wishlishSlice";
 
 const Headers = styled.header`
   position: fixed;
@@ -30,6 +31,9 @@ const Headers = styled.header`
   @media ${xs} {
     height:6rem;
   }
+  .container-fluid{
+    padding: 0 1rem !important;
+  }
 `;
 const Logo = styled.div`
   margin-top: 3.2rem;
@@ -42,15 +46,7 @@ const Logo = styled.div`
   }
 `;
 
-// const ContainerFluid = styled.div`
-//   padding: 0 5rem;
-//   @media ${md} {
-//     padding: 0 3rem;
-//   }
-//   @media ${xs} {
-//     padding: 0 1rem;
-//   }
-// `;
+
 
 const MainMenu = styled.div``;
 const NavUl = styled.ul`
@@ -90,6 +86,11 @@ const IconGroup = styled(Row)`
   }
   .icon {
     padding-right: 2rem;
+
+  }
+  .menu-icon{
+    padding-right: 0;
+
   }
   .wishlist {
     font-size: 2rem;
@@ -134,6 +135,7 @@ const menuUser = (
 const Header = () => {
 
   const cart:[] = useAppSelector(selectCart);
+  const wishlish:[] = useAppSelector(selectwishlish);
   const [visible, setVisible] = useState(false);
   const showDrawer = () => {
     setVisible(true);
@@ -157,7 +159,7 @@ const Header = () => {
               <nav>
                 <NavUl>
                   <li>
-                    <NavLinkPage to={"/"}>Home </NavLinkPage>
+                    <NavLinkPage to={"/"} >Home </NavLinkPage>
                   </li>
                   <li>
                     <NavLinkPage to={"/shop"}>Cửa Hàng</NavLinkPage>
@@ -192,7 +194,7 @@ const Header = () => {
               </Col>
               <Col className="icon">
                 <Link to={"/wishlish"}>
-                  <Badge count={0} showZero offset={[6, 1]}>
+                  <Badge count={wishlish.length} showZero offset={[6, 1]}>
                     <HeartOutlined className="wishlist" />
                   </Badge>
                 </Link>
@@ -204,7 +206,7 @@ const Header = () => {
                   </Badge>
                 </Link>
               </Col>
-              <Col lg={0}  className="icon">
+              <Col lg={0}  className="icon menu-icon" >
                 <MenuUnfoldOutlined onClick={showDrawer} />
                 <Drawer
                   width={250}

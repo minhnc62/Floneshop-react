@@ -11,8 +11,11 @@ export interface cartState {
     description: string,
     categori: string,
     image: string,
-    qty: number,
-    
+    quantity: number,
+    color: any,
+    size: any,
+    discount: number,
+
 
 }
 
@@ -30,67 +33,57 @@ const cartSlice: any = createSlice({
 
         add: (cart, { payload }: PayloadAction<cartState>) => {
 
-            const existingIndex = cart.findIndex(
-                (item) => item.id === payload.id
+            const itemIndex = cart.findIndex(
+                (item) => item.id === payload.id && item.color === payload.color && item.size === payload.size
             );
-            if (existingIndex > 0) {
-                cart[existingIndex] = {
-                    ...cart[existingIndex],
-                    //  qty: cart[existingIndex].qty + 1,
+            if (itemIndex >= 0) {
+                cart[itemIndex] = {
+                    ...cart[itemIndex],
+                    quantity: cart[itemIndex].quantity + 1,
                 };
                 toast.info("Đã tăng số lượng sản phẩm", {
                     position: "bottom-left",
-                  });
+                });
             }
             else {
                 let tempProductItem = { ...payload };
                 cart.push(tempProductItem);
 
                 toast.success("Đã thêm vào giỏ hàng", {
-                  position: "bottom-left",
+                    position: "bottom-left",
                 });
-              }
-
-            // if (cart.length > 0) {
-            //     const payloadAlreadyExsisted = cart.some((product: cartState) => {
-            //         return product.id === payload.id;
-            //     });
-            //     if (payloadAlreadyExsisted) {
-            //         const cartFiltered = cart.filter((product: cartState) => {
-            //             product.id !== payload.id;
-            //         });
-            //         const updatedCart = [...cartFiltered, payload];
-            //         toast.success("Đã thêm vào giỏ hàng", {
-            //             position: "bottom-left",
-            //         });
-            //         return updatedCart;
-            //     } else {
-            //         toast.success("Đã thêm vào giỏ hàng", {
-            //             position: "bottom-left",
-            //         });
-            //         return [...cart, payload];
-            //     }
-            // } else {
-            //     toast.success("Đã thêm vào giỏ hàng", {
-            //         position: "bottom-left",
-            //     });
-            //     return [payload];
-            // }
-
-
-            // remove(state, action: PayloadAction<number>) {
-            //     //return state.filter((todo) => todo.id != action.payload);
-            // },
-            // clear(state) {
-            //     //state.length = 0;
-            // },
+            }
         },
+        decreaseCart: (cart, { payload }: PayloadAction<cartState>) => {
+            const itemIndex = cart.findIndex(
+                (item) => item.id === payload.id && item.color === payload.color && item.size === payload.size
+            );
+            if (cart[itemIndex].quantity > 1) {
+                cart[itemIndex].quantity -= 1;
+
+                toast.info("Đã giảm số lượng sản phẩm", {
+                    position: "bottom-left",
+                });
+            }
+        },
+        removeItem: (cart, { payload }: PayloadAction<cartState>) => {
+            toast.error("Đã xóa sản phẩm khỏi giỏ hàng", {
+                position: "bottom-left",
+              });
+            return cart.filter((item: cartState) => item.id !== payload.id || item.color !== payload.color || item.size !== payload.size)
+
+        },
+        clearCart(cart, action) {
+            
+            toast.error("Đã xóa tất cả sản phẩm", { position: "bottom-left" });
+            return cart  = [];
+          },
     },
 
 
 });
 
-export const { add, remove, clear } = cartSlice.actions;
+export const { add, removeItem, clearCart, decreaseCart } = cartSlice.actions;
 export const selectCart: any = (state: RootState) => state.cartReducer;
 
 export default cartSlice.reducer;

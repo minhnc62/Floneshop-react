@@ -56,16 +56,16 @@ const Renderer = ({ days, hours, minutes, seconds }: rendererState) => {
     <Timer className=" timer-style">
       <div>
         <span className="cdown day">
-          {days} <p>Days</p>
+          {days} <p>Ngày</p>
         </span>
         <span className="cdown hour">
-          {hours} <p>Hours</p>
+          {hours} <p>Giờ</p>
         </span>
         <span className="cdown minutes">
-          {minutes} <p>Minutes</p>
+          {minutes} <p>Phút</p>
         </span>
         <span>
-          {seconds} <p>Secs</p>
+          {seconds} <p>Giây</p>
         </span>
       </div>
     </Timer>

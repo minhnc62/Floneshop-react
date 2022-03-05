@@ -123,7 +123,7 @@ const Feature = () => {
               </div>
               <div className="support-content-3">
                 <img src="image/support-8.png" alt="logo" />
-                <p>Free shipping on all order</p>
+                <p>Giao hàng miễn phí cho các đơn đặt hàng</p>
               </div>
             </div>
           </div>
@@ -138,7 +138,7 @@ const Feature = () => {
               </div>
               <div className="support-content-3">
                 <img src="image/support-9.png" alt="logo" />
-                <p>Free shipping on all order</p>
+                <p>Đảm bảo trả lại dưới 7 ngày</p>
               </div>
             </div>
           </div>
@@ -153,7 +153,7 @@ const Feature = () => {
               </div>
               <div className="support-content-3">
                 <img src="image/support-10.png" alt="logo" />
-                <p>Free shipping on all order</p>
+                <p>Trên mỗi đơn đặt hàng trên 500.000 đ</p>
               </div>
             </div>
           </div>

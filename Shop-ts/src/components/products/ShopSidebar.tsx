@@ -3,28 +3,34 @@ import ShopSearch from "./ShopSearch";
 import styled from "styled-components";
 import ShopColor from "./ShopColor";
 import ShopSize from "./ShopSize";
+import { getIndividualCategories, getIndividualColors, getProductsIndividualSizes } from "../../helper/product";
 
 const Sidebar = styled.div`
-    margin-right: 3rem;
-    margin-top:3rem
+  margin-right: 3rem;
+  margin-top: 3rem;
+`;
+interface sidebarState {
+  products: any;
+  getSortParams: any;
+}
 
-`
+const ShopSidebar = ({ products,getSortParams }: sidebarState) => {
 
-
-const ShopSidebar = () => {
-    
+   const uniqueCategories = getIndividualCategories(products);
+  // const uniqueColors = getIndividualColors(products);
+  // const uniqueSizes = getProductsIndividualSizes(products);
   
-    return (
-      <Sidebar >
-        {/* shop search */}
-        <ShopSearch />
-        
-        <ShopCategories/>
-        <ShopColor/>
-        <ShopSize/>
-        
-      </Sidebar>
-    );
-  };
+  return (
+    <Sidebar>
+      {/* shop search */}
+      <ShopSearch />
 
-  export default ShopSidebar;
+      <ShopCategories 
+        getSortParams={getSortParams}/>
+      <ShopColor />
+      <ShopSize />
+    </Sidebar>
+  );
+};
+
+export default ShopSidebar;

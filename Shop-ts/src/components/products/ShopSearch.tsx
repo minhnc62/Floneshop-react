@@ -1,7 +1,14 @@
 import { SearchOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 import { theme_color } from "../../rootStyledComponent";
-
+import { Input } from "antd";
+import {
+  selectProductApi,
+  searchProductByTitle,
+  changeTitle,
+} from "../../redux/productSlice";
+import { useNavigate, Link } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 export const Sidebar_widget = styled.div`
   .pro-sidebar-title {
     font-size: 16px;
@@ -50,19 +57,51 @@ const Sidebsr_Search = styled.div`
     }
   }
 `;
+const { Search } = Input;
 
 const ShopSearch = () => {
+  const dispatch = useAppDispatch();
+  const { error, title } = useAppSelector(selectProductApi);
+
+  let controller: any;
+  const handleChange = (e: any) => {
+    controller && controller.abort();
+    controller = new AbortController();
+    const { payload } = dispatch(changeTitle(e.target.value)); //Lưu lại text người dùng nhập vào
+
+    if (payload.trim().length > 0) {
+      dispatch(searchProductByTitle({ signal: controller.signal }));
+    }
+  };
   return (
     <Sidebar_widget>
       <h4 className="pro-sidebar-title">Search </h4>
-      <Sidebsr_Search >
-        <form className="pro-sidebar-search-form" action="#">
-          <input type="text" placeholder="Search here..." />
+      <Sidebsr_Search>
+        {/* <form
+          className="pro-sidebar-search-form"
+          action=""
+          onSubmit={(e) => e.preventDefault()}
+          onChange={handleChange}
+        >
+          <input
+            type="text"
+            placeholder="Search here..."
+            value={title}
+            onChange={handleChange}
+            className="title"
+          />
           <button>
-          
-          <SearchOutlined/>
+            <SearchOutlined />
           </button>
-        </form>
+          {error && <span className="error"> Không có sản phẩm nào</span>}
+        </form> */}
+        <Search
+          placeholder="Search here..."
+          onSearch={title}
+          onChange={handleChange}
+          style={{ width: 200 }}
+        />
+        {error && <span className="error"> Không có sản phẩm nào</span>}
       </Sidebsr_Search>
     </Sidebar_widget>
   );

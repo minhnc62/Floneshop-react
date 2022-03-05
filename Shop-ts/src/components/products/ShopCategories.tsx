@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { Sidebar_widget } from "./ShopSearch";
 import { Checkbox } from "antd";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { productState, selectProductApi } from "../../redux/productSlice";
+import { useEffect, useState } from "react";
 export const Sidebar_Categorie = styled(Sidebar_widget)`
   .sidebar-widget-list {
     margin-top: 3rem;
@@ -47,8 +50,12 @@ export const Sidebar_Categorie = styled(Sidebar_widget)`
     }
   }
 `;
+interface categoriState {
+  getSortParams: any;
+}
+const ShopCategories = ({ getSortParams }: categoriState) => {
+  const { products } = useAppSelector(selectProductApi);
 
-const ShopCategories = () => {
   return (
     <Sidebar_Categorie>
       <h4 className="pro-sidebar-title">Categories </h4>
@@ -58,17 +65,59 @@ const ShopCategories = () => {
             <div className="sidebar-widget-list-left">
               <button>
                 {/* <span className="checkmark" /> All Categories */}
-                <Checkbox>All Categories</Checkbox>
+                <Checkbox
+                  onClick={() => {
+                    getSortParams("category", "");
+                  }}
+                >
+                  All Categories
+                </Checkbox>
               </button>
             </div>
           </li>
           <li>
             <div className="sidebar-widget-list-left">
+              {/* {products.map((product: productState) => {
+                product.categori &&
+                  product.categori.map((single: string) => {
+                    return <Checkbox
+                    onClick={() => {
+                      getSortParams("category", single);
+                      
+                    }}
+                  >
+                    men
+                  </Checkbox>;
+                  });
+              })} */}
               <button>
-                {/* <span className="checkmark" /> men */}
-                <Checkbox>men</Checkbox>
+                {/* <span className="checkmark" /> All Categories */}
+                <Checkbox
+                  onClick={() => {
+                    getSortParams("category", "");
+                  }}
+                >
+                  Men
+                </Checkbox>
               </button>
             </div>
+            
+          </li>
+          <li>
+            <div className="sidebar-widget-list-left">
+              
+              <button>
+               
+                <Checkbox
+                  onClick={() => {
+                    getSortParams("category", "");
+                  }}
+                >
+                  Women
+                </Checkbox>
+              </button>
+            </div>
+            
           </li>
         </ul>
       </div>
@@ -77,3 +126,7 @@ const ShopCategories = () => {
 };
 
 export default ShopCategories;
+function categori(categori: any) {
+  throw new Error("Function not implemented.");
+}
+
