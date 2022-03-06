@@ -15,6 +15,7 @@ import {
 } from "@ant-design/icons";
 import { Breadcrumb } from "antd";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 const Contact_Area = styled.div`
 margin-top:10rem;
   &.pt-100 {
@@ -205,6 +206,10 @@ const Contact_Form = styled.div`
 `;
 
 export default () => {
+
+  useEffect(() => {
+    window.scrollTo(0,0)
+}, [])
   return (
     <Contact_Area className=" pt-100 pb-100">
       <div className="container">

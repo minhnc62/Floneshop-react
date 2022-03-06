@@ -78,6 +78,7 @@ const ProductDetail = () => {
   useEffect(() => {
     if (singleProduct && singleProduct.id == id) return;
     dispatch(getProductsById(id));
+    window.scrollTo(0,0)
   }, [id]);
 
   if (loading) {
@@ -91,7 +92,7 @@ const ProductDetail = () => {
   }
 
   const newProductMen = products.slice(0, 4);
-
+ 
   return (
     <Product_Delail>
       <div className="container">

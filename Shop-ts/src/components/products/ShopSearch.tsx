@@ -101,7 +101,7 @@ const ShopSearch = () => {
           onChange={handleChange}
           style={{ width: 200 }}
         />
-        {error && <span className="error"> Không có sản phẩm nào</span>}
+        {/* {error && <span className="error"> Không có sản phẩm nào</span>} */}
       </Sidebsr_Search>
     </Sidebar_widget>
   );

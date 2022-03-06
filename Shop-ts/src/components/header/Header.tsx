@@ -1,9 +1,8 @@
-
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { Row, Col, Menu, Dropdown, Input, Badge, Drawer} from "antd";
+import { Row, Col, Menu, Dropdown, Input, Badge, Drawer } from "antd";
 import styled from "styled-components";
-import { xl, lg, md, xs } from "../../rootStyledComponent";
+import { xl, lg, md, xs, xxs } from "../../rootStyledComponent";
 import {
   SearchOutlined,
   HeartOutlined,
@@ -21,19 +20,17 @@ const Headers = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  
+
   border-bottom: 0 solid #4a90e2;
   background-color: #fff;
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.06);
   @media ${md} {
-    height:6rem;
+    height: 6rem;
   }
   @media ${xs} {
-    height:6rem;
+    height: 6rem;
   }
-  .container-fluid{
-    padding: 0 1rem !important;
-  }
+  
 `;
 const Logo = styled.div`
   margin-top: 3.2rem;
@@ -46,12 +43,10 @@ const Logo = styled.div`
   }
 `;
 
-
-
 const MainMenu = styled.div``;
 const NavUl = styled.ul`
   display: block;
-  
+
   text-align: center;
   li {
     position: relative;
@@ -86,11 +81,43 @@ const IconGroup = styled(Row)`
   }
   .icon {
     padding-right: 2rem;
-
+    .search-active {
+      border: none;
+      background-color: #fff;
+    }
+    .search-content {
+      position: absolute;
+      z-index: 99;
+      top: 250%;
+      right: 0;
+      visibility: hidden;
+      min-width: 20rem;
+      transition: all 0.5s ease 0s;
+      transform: rotateX(90deg);
+      transform-origin: center top 0;
+      padding:1rem;
+      opacity: 0;
+      background: #ffffff none repeat scroll 0 0;
+      box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
+      &.active {
+        visibility: visible;
+        transform: rotateX(0deg);
+        opacity: 1;
+      }
+      @media ${xs} {
+        top: 180%;
+      }
+      @media ${md} {
+        top: 160%;
+      }
+      @media ${xxs} {
+        left:-500%;
+        padding:0;
+      }
+    }
   }
-  .menu-icon{
+  .menu-icon {
     padding-right: 0;
-
   }
   .wishlist {
     font-size: 2rem;
@@ -133,9 +160,8 @@ const menuUser = (
 );
 
 const Header = () => {
-
-  const cart:[] = useAppSelector(selectCart);
-  const wishlish:[] = useAppSelector(selectwishlish);
+  const cart: [] = useAppSelector(selectCart);
+  const wishlish: [] = useAppSelector(selectwishlish);
   const [visible, setVisible] = useState(false);
   const showDrawer = () => {
     setVisible(true);
@@ -143,10 +169,14 @@ const Header = () => {
   const onClose = () => {
     setVisible(false);
   };
+
+  const handleClick = (e: any) => {
+    e.currentTarget.nextSibling.classList.toggle("active");
+  };
   return (
     <Headers className=" header-padding-2 sticky-bar header-res-padding clearfix   ">
-      <div className="container-fluid">
-        <Row justify="space-between" >
+      <div className="container">
+        <Row justify="space-between">
           <Col xs={4} md={12} lg={3} xl={4} span={8}>
             <Logo className="logo">
               <Link to={"/"}>
@@ -159,7 +189,7 @@ const Header = () => {
               <nav>
                 <NavUl>
                   <li>
-                    <NavLinkPage to={"/"} >Home </NavLinkPage>
+                    <NavLinkPage to={"/"}>Home </NavLinkPage>
                   </li>
                   <li>
                     <NavLinkPage to={"/shop"}>Cửa Hàng</NavLinkPage>
@@ -177,12 +207,24 @@ const Header = () => {
           <Col xl={4} lg={5} md={12} span={16}>
             <IconGroup className="header-right-wrap">
               <Col className="icon">
-                <Dropdown overlay={menu} trigger={["click"]}>
-                  <SearchOutlined
-                    className="ant-dropdown-link"
-                    onClick={(e) => e.preventDefault()}
-                  />
-                </Dropdown>
+                <div className="same-style header-search ">
+                  <button
+                    className="search-active"
+                    onClick={(e) => handleClick(e)}
+                  >
+                    <i>
+                      <SearchOutlined />
+                    </i>
+                  </button>
+                  <div className="search-content">
+                    <form action="">
+                      <Search
+                        placeholder="input search text"
+                        style={{ width: 300 }}
+                      />
+                    </form>
+                  </div>
+                </div>
               </Col>
               <Col className="icon">
                 <Dropdown overlay={menuUser} trigger={["click"]}>
@@ -206,7 +248,7 @@ const Header = () => {
                   </Badge>
                 </Link>
               </Col>
-              <Col lg={0}  className="icon menu-icon" >
+              <Col lg={0} className="icon menu-icon">
                 <MenuUnfoldOutlined onClick={showDrawer} />
                 <Drawer
                   width={250}
@@ -214,15 +256,18 @@ const Header = () => {
                   onClose={onClose}
                   visible={visible}
                 >
-                  <p><Link to={'/'}>Home</Link></p>
-                  <p><Link to={'/shop'}>Cửa Hàng</Link></p>
-                  <p><Link to={'/about'}>Gioi Thieu</Link></p>
-                  <p><Link to={'/contact'}>Liên Hệ</Link></p>
-
-                  
-                  
-                  
-                  
+                  <p>
+                    <Link to={"/"}>Home</Link>
+                  </p>
+                  <p>
+                    <Link to={"/shop"}>Cửa Hàng</Link>
+                  </p>
+                  <p>
+                    <Link to={"/about"}>Gioi Thieu</Link>
+                  </p>
+                  <p>
+                    <Link to={"/contact"}>Liên Hệ</Link>
+                  </p>
                 </Drawer>
               </Col>
             </IconGroup>

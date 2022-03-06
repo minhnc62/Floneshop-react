@@ -7,6 +7,7 @@ import Feature from "../components/feature/Feature";
 import SubscribeEmail from "../components/subscribeEmail/SubscribeEmail";
 import { md, xs } from "../rootStyledComponent";
 import TabProduct from "../components/products/TabProduct";
+import { useEffect } from "react";
 
 
 const HomeContent = styled.div`
@@ -23,6 +24,10 @@ const HomeContent = styled.div`
 `;
 
 export default () => {
+
+  useEffect(() => {
+    window.scrollTo(0,0)
+}, [])
   return (
     <HomeContent>
       <Slider/>

@@ -47,7 +47,9 @@ useEffect(() => {
   setSortedProducts(sortedProducts);
   
 }, [ products, sortType, sortValue, filterSortType, filterSortValue ]);
-
+useEffect(() => {
+  window.scrollTo(0,0)
+}, [products])
 
   return (
     <Shop_Area>

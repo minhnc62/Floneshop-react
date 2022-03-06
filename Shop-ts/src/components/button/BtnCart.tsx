@@ -10,9 +10,11 @@ interface btnState {
 
 const BtnCart = ({ src, btnName }: btnState) => {
   return (
-    <Btn_Product className=" btn-cart  funfact-btn funfact-btn--round-shape funfact-btn-red btn-hover">
-      <Link to={src}>{btnName}</Link>
-    </Btn_Product>
+    <Link to={src}>
+      <Btn_Product className=" btn-cart  funfact-btn funfact-btn--round-shape funfact-btn-red btn-hover">
+        <Link to={src}>{btnName}</Link>
+      </Btn_Product>
+    </Link>
   );
 };
 
@@ -22,18 +24,17 @@ const Btn_Product = styled(Button_add)`
     a {
       color: #000000;
       font-weight: 500;
-      &:hover {
-        color: #fff;
-      }
+      
+    }
+    &:hover a{
+      color:#fff;
     }
   }
   &.funfact-btn-red {
     background-color: #f2f2f2;
   }
 
-  &:hover {
-    color: #fff;
-  }
+  
 `;
 
 export default BtnCart;

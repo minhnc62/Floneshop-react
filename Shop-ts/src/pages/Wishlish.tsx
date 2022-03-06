@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { Empty } from "antd";
 import { lg, theme_color, xs } from "../rootStyledComponent";
 import { productState } from "../redux/productSlice";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import BtnCart from "../components/button/BtnCart";
@@ -154,7 +154,9 @@ const Wishlish = () => {
   const dispatch = useAppDispatch()
   const wishlish: [] = useAppSelector(selectwishlish);
  
-
+  useEffect(() => {
+    window.scrollTo(0,0)
+}, [wishlish])
 
   const handleRemoveFromwishlish = (p:any) => {
     dispatch(remove(p));

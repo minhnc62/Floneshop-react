@@ -231,6 +231,10 @@ const Cart = () => {
     );
   }, [cart]);
 
+  useEffect(() => {
+    window.scrollTo(0,0)
+}, [cart])
+
  
 
   const handleRemoveFromCart = (p: any) => {

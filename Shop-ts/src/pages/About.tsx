@@ -4,6 +4,7 @@ import BannerAbout from "../components/banner/BannerAbout";
 import FunFact from "../components/FunFact";
 import { Breadcrumb } from "antd";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const About = styled.div`
   margin-top: 20rem;
@@ -13,6 +14,10 @@ const About = styled.div`
 `;
 
 export default () => {
+
+  useEffect(() => {
+    window.scrollTo(0,0)
+}, [])
   return (
     <About>
       <div className="container">

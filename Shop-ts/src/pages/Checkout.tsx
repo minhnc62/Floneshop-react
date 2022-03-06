@@ -31,6 +31,10 @@ const Checkout = () => {
     );
   }, [cart]);
 
+  useEffect(() => {
+    window.scrollTo(0,0)
+}, [cart])
+
   const success = () => {
     message.success('Đặt hàng thành công');
   };

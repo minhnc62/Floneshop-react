@@ -24,12 +24,10 @@ interface shopProductState {
   
 }
 const ShopProducts = ({ layout, productFilter}: shopProductState) => {
-  const dispatch = useAppDispatch();
+  
   const { loading, error, title } = useAppSelector(selectProductApi);
 
-  useEffect(() => {
-    dispatch(getProducts());
-  }, []);
+  
 
   if (loading) {
     return <Loading size="large" />;

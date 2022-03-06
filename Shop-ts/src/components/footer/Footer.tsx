@@ -11,8 +11,8 @@ const FooterArea = styled.div`
 `;
 
 const Container = styled.div`
-  .container-fluid{
-    padding:0 1rem!important;
+  .container{
+    
     .copyright {
       font-size:1.4rem;
     margin-bottom: 3rem;
@@ -125,7 +125,7 @@ const Footer = () => {
   return (
     <FooterArea className="Footer">
       <Container>
-        <div  className="container-fluid">
+        <div  className="container">
         <Row>
           <Col lg={4} sm={8} span={24}>
             <div className="copyright ">
