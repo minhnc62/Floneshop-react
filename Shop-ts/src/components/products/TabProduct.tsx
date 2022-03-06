@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { Tabs } from "antd";
-import { useAppSelector } from "../../redux/hooks";
-import { productState, selectProductApi } from "../../redux/productSlice";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { getProducts, productState, selectProductApi } from "../../redux/productSlice";
 import CardItem from "./CardItem";
 import ShoppingButton from "../button/ShoppingButton";
+import { useEffect } from "react";
 const TabProduct_Area = styled.div`
   padding-top: 10rem;
   padding-bottom: 10rem;
@@ -24,9 +25,16 @@ const Product_Wrap = styled.div`
 `
 const { TabPane } = Tabs;
 const TabProduct = () => {
+
+  const dispatch = useAppDispatch()
   const { products } = useAppSelector(selectProductApi);
 
-   
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
+
+
+
     const newProductMen = products.slice(0,4);
     const newProductWomen = products.slice(5,9);
     const newProductSale = products.slice(10,14);
@@ -123,3 +131,7 @@ const TabProduct = () => {
 };
 
 export default TabProduct;
+function dispatch(arg0: any) {
+  throw new Error("Function not implemented.");
+}
+

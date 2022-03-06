@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Countdown from "react-countdown-now";
+import Countdown from "react-countdown";
 import Renderer from "./Renderer";
 import styled from "styled-components";
 import { lg, md, xs, theme_color } from "../../rootStyledComponent";

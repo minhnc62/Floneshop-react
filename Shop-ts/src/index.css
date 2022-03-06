@@ -34,6 +34,7 @@ a{
   line-height: inherit;
     cursor: pointer;
     text-decoration: none!important;
+    color:black
     
 }
 input:focus{

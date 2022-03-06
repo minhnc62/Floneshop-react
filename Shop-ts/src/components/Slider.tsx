@@ -5,19 +5,12 @@ import { Carousel } from "antd";
 import ShoppingButton from "./button/ShoppingButton";
 
 const Slider_Content = styled.div`
-  /* paddingLeft:'5rem',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'start',
-    textAlign: 'start',
-  background: 'url("image/slider/slider-1.png")', */
+  
   display: flex;
   justify-content: center;
   align-items: start;
   text-align: start;
   flex-direction: column;
-  padding-left: 5rem;
   height: 60rem;
   width: 100%;
   background-image: url("image/slider/slider-1.png");
@@ -30,7 +23,7 @@ const Slider_Content = styled.div`
     background-position: 65%;
   }
   @media ${xxs} {
-    filter: brightness(85%);
+    filter: brightness(90%);
 
     background-position: 72%;
     text-align: center;
@@ -94,7 +87,6 @@ const Slider_Content = styled.div`
     line-height: 7rem;
     margin: 0.6rem 0 3.8rem;
     color: #010101;
-    
   }
 `;
 
@@ -103,21 +95,25 @@ const Slider = () => {
     <Carousel autoplay>
       <div>
         <Slider_Content>
-          <h3 className="animated no-style">Ưu đãi này ngay hôm nay</h3>
-          <h1 className="animated">
-            Bộ sưu tập mới <br /> Giảm 20%
-          </h1>
-          <ShoppingButton title="Mua ngay" />
+          <div className="container">
+            <h3 className="animated no-style">Ưu đãi này ngay hôm nay</h3>
+            <h1 className="animated">
+              Bộ sưu tập mới <br /> Giảm 20%
+            </h1>
+            <ShoppingButton title="Mua ngay" />
+          </div>
         </Slider_Content>
       </div>
 
       <div>
         <Slider_Content className="content-one">
-          <h3 className="animated no-style">Ưu đãi này ngay hôm nay</h3>
-          <h1 className="animated">
-          Bộ sưu tập mới <br /> Giảm 20%
-          </h1>
-          <ShoppingButton title="Mua ngay" />
+          <div className="container">
+            <h3 className="animated no-style">Ưu đãi này ngay hôm nay</h3>
+            <h1 className="animated">
+              Bộ sưu tập mới <br /> Giảm 20%
+            </h1>
+            <ShoppingButton title="Mua ngay" />
+          </div>
         </Slider_Content>
       </div>
     </Carousel>

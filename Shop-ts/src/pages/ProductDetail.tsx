@@ -11,6 +11,8 @@ import styled from "styled-components";
 import { Breadcrumb, Spin } from "antd";
 import ProductDetailItem from "../components/products/ProductDetailItem";
 import CardItem from "../components/products/CardItem";
+import { Tabs } from "antd";
+const { TabPane } = Tabs;
 const Loading = styled(Spin)`
   min-height: 100vh;
   display: flex;
@@ -26,6 +28,9 @@ const Product_Delail = styled.div`
 
   .product {
     margin-top: 3rem;
+  }
+  .tab-product{
+    margin-top:3rem;
   }
 `;
 
@@ -58,11 +63,10 @@ const Related_Products = styled.div`
       background-color: #000;
     }
   }
-  .related-product-list{
-    margin-top:4rem;
-    margin-bottom:10rem;
+  .related-product-list {
+    margin-top: 4rem;
+    margin-bottom: 10rem;
   }
-
 `;
 const ProductDetail = () => {
   const dispatch = useAppDispatch();
@@ -115,6 +119,42 @@ const ProductDetail = () => {
           />
         </div>
 
+        <div className="tab-product">
+          <Tabs defaultActiveKey="1" centered animated size="large">
+            <TabPane tab="Thông tin" key="1">
+              <Product_Anotherinfo_Wrapper >
+                <ul>
+                  <li className="d-flex">
+                    <span className="anotherinfo col-1"> Weight</span>
+                    <span className="anotherinfo-item">400g</span>
+                  </li>
+                  <li className="d-flex">
+                    <span className="anotherinfo col-1"> Dimensions</span>
+                    <span className="anotherinfo-item">10 x 10 x 15 cm</span>
+                  </li>
+                  <li className="d-flex">
+                    <span className="anotherinfo col-1"> Materials</span>
+                    <span className="anotherinfo-item"> 60% cotton, 40% polyester</span>
+                  </li>
+                  <li className="d-flex">
+                    <span className="anotherinfo col-1"> Other Info</span>
+                    <span className="anotherinfo-item"> American heirloom jean shorts pug seitan letterpress</span>
+                  </li>
+                </ul>
+              </Product_Anotherinfo_Wrapper>
+            </TabPane>
+            <TabPane tab="Miêu tả" key="2">
+              <Description>
+              <span className="description-product">{singleProduct.description}{singleProduct.description}</span>
+              </Description>
+              
+            </TabPane>
+            <TabPane tab="Nhận xét" key="3">
+              Nhận xét
+            </TabPane>
+          </Tabs>
+        </div>
+
         <Related_Products>
           <h2>Related Products</h2>
           <div className="related-product-list">
@@ -146,4 +186,23 @@ const ProductDetail = () => {
     </Product_Delail>
   );
 };
+
+
+const Product_Anotherinfo_Wrapper = styled.div`
+.anotherinfo{
+  font-size:1.4rem;
+  font-weight:500;
+  margin-bottom:1.5rem;
+}
+.anotherinfo-item{
+  margin-left:2rem;
+}
+  
+`
+const Description = styled.div`
+  .description-product{
+    font-size:1.4rem;
+    line-height:2.4rem;
+  }
+`
 export default ProductDetail;
