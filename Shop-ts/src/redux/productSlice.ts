@@ -53,7 +53,7 @@ export interface productState {
     title: string,
     price: number,
     description: string,
-    categori: any,
+    category: any,
     image: any,
     discount:number,
     new:boolean,

@@ -40,7 +40,7 @@ export const Btn_Shop = styled.div`
   }
     &.funfact-btn-red {
     a {
-      background-color: #c61a32;
+      background-color: #ff4d4f;
       &:hover {
         border: 1px solid ${theme_color};
       }

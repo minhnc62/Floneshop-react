@@ -134,27 +134,27 @@ const Footer = () => {
                   <img src="image/logo.png" alt="logo" />
                 </Link>
               </FooterLogo>
-              <p>All Rights Reserved</p>
+              <p>Đã đăng ký Bản quyền</p>
             </div>
           </Col>
           <Col lg={4} sm={8} span={24}>
             <FooterWidget>
               <div className="footer-title">
-                <h3>ABOUT US</h3>
+                <h3>Giới thiệu</h3>
               </div>
               <div className="footer-list">
                 <ul>
                   <li>
-                    <Link to={"/about"}>About us</Link>
+                    <Link to={"/about"}>Về chúng tôi</Link>
                   </li>
                   <li>
-                    <Link to={"/"}>Store location</Link>
+                    <Link to={"/"}>Vị trí cửa hàng</Link>
                   </li>
                   <li>
-                    <Link to={"/contact"}>Contact</Link>
+                    <Link to={"/contact"}>Liên hệ</Link>
                   </li>
                   <li>
-                    <Link to={"/"}>Orders tracking</Link>
+                    <Link to={"/"}>Theo dõi đơn hàng</Link>
                   </li>
                 </ul>
               </div>
@@ -163,21 +163,21 @@ const Footer = () => {
           <Col lg={4} sm={8} span={24}>
             <FooterWidget>
               <div className="footer-title">
-                <h3>USEFUL LINKS</h3>
+                <h3>Liên kết</h3>
               </div>
               <div className="footer-list">
                 <ul>
                   <li>
-                    <Link to={"#/"}>Returns</Link>
+                    <Link to={"#/"}>Lợi nhuận</Link>
                   </li>
                   <li>
-                    <Link to={"#/"}>Support Policy</Link>
+                    <Link to={"#/"}>Chính sách hỗ trợ</Link>
                   </li>
                   <li>
-                    <Link to={"/"}>Size guide</Link>
+                    <Link to={"/"}>Hướng dẫn kích thước</Link>
                   </li>
                   <li>
-                    <Link to={"/"}>FAQs</Link>
+                    <Link to={"/"}>Câu hỏi thường gặp</Link>
                   </li>
                 </ul>
               </div>
@@ -186,18 +186,18 @@ const Footer = () => {
           <Col lg={4} sm={12} span={24}>
             <FooterWidget>
               <div className="footer-title">
-                <h3>FOLLOW US</h3>
+                <h3>Theo dõi chúng tôi</h3>
               </div>
               <div className="footer-list">
                 <ul>
                   <li>
-                    <Link to={"/about"}>Facebook</Link>
+                    <Link to={"/"}>Facebook</Link>
                   </li>
                   <li>
                     <Link to={"/"}>Twitter</Link>
                   </li>
                   <li>
-                    <Link to={"/contact"}>Instagram</Link>
+                    <Link to={"/"}>Instagram</Link>
                   </li>
                   <li>
                     <Link to={"/"}>Youtube</Link>
@@ -209,11 +209,11 @@ const Footer = () => {
           <Col lg={8} sm={12} span={24}>
             <FooterWidget className="ml-70">
               <div className="footer-title">
-                <h3>FOLLOW US</h3>
+                <h3>Đăng ký</h3>
               </div>
               <div className="subscribe-style">
                 <p>
-                  Get E-mail updates about our latest shop and special offers.
+                Nhận thông tin cập nhật qua Email
                 </p>
                 <SubscribeForm>
                   <div className="mc-form">
@@ -222,11 +222,11 @@ const Footer = () => {
                         id="mc-form-email"
                         className="email"
                         type="email"
-                        placeholder="Enter your email address..."
+                        placeholder="Nhập email của bạn."
                       />
                     </div>
                     <div className="clear">
-                      <button className="button">SUBSCRIBE</button>
+                      <button className="button">Đăng ký</button>
                     </div>
                   </div>
                 </SubscribeForm>

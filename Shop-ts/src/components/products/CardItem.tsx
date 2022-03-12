@@ -55,7 +55,7 @@ const CardItem = ({
           {discount || newProduct ? (
             <div className="product-img-badges">
               {discount ? <span className="discount">-{discount}%</span> : ""}
-              {newProduct ? <span className="purple">New</span> : ""}
+              {newProduct ? <span className="purple">Mới</span> : ""}
             </div>
           ) : (
             ""

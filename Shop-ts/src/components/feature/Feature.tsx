@@ -112,7 +112,7 @@ const Feature = () => {
     <Support_Area className=" pt-50 pb-40 ">
       <div className="container-fluid padding-10-row-col">
         <div className="row">
-          <div className="col-lg-4 col-md-6 col-sm-6">
+          <div className="col-lg-4 col-md-4 col-sm-12 pt-1">
             <div className="support-wrap-3 text-center mb-10 color-1">
               <div className="support-icon-2">
                 <img
@@ -123,11 +123,11 @@ const Feature = () => {
               </div>
               <div className="support-content-3">
                 <img src="image/support-8.png" alt="logo" />
-                <p>Giao hàng miễn phí cho các đơn đặt hàng</p>
+                <p>Giao hàng miễn phí </p>
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-md-6 col-sm-6">
+          <div className="col-lg-4 col-md-4 col-sm-12 pt-1">
             <div className="support-wrap-3 text-center mb-10 color-2">
               <div className="support-icon-2">
                 <img
@@ -138,11 +138,11 @@ const Feature = () => {
               </div>
               <div className="support-content-3">
                 <img src="image/support-9.png" alt="logo" />
-                <p>Đảm bảo trả lại dưới 7 ngày</p>
+                <p> Trả lại dưới 7 ngày</p>
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-md-6 col-sm-6">
+          <div className="col-lg-4 col-md-4 col-sm-12 pt-1">
             <div className="support-wrap-3 text-center mb-10 color-3">
               <div className="support-icon-2">
                 <img
@@ -153,7 +153,7 @@ const Feature = () => {
               </div>
               <div className="support-content-3">
                 <img src="image/support-10.png" alt="logo" />
-                <p>Trên mỗi đơn đặt hàng trên 500.000 đ</p>
+                <p>Khi mua hàng lần đầu</p>
               </div>
             </div>
           </div>

@@ -63,8 +63,9 @@ const wishlishSlice: any = createSlice({
 
         },
         clearwishlish(wishlish, action) {
-            wishlish  = [];
+            
             toast.error("Đã xóa tất cả sản phẩm yêu thích", { position: "bottom-left" });
+            return wishlish  = [];
           },
     },
 

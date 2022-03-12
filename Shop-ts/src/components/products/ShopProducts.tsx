@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { productState } from "../../redux/productSlice";
 import { Spin } from "antd";
 
-import { lg, md, xs } from "../../rootStyledComponent";
+import { lg, md, xs, xxs } from "../../rootStyledComponent";
 import CardItem from "./CardItem";
 import ListCard from "./ListCard";
 import { ControlOutlined } from "@ant-design/icons";
@@ -41,7 +41,7 @@ const ShopProducts = ({ layout, productFilter}: shopProductState) => {
         {productFilter
         .filter((obj:productState)=>obj.title.toLocaleLowerCase().includes(title))
         .map((p: productState) => (
-          <div className=" col-xl-3 col-sm-6 " key={p.id}>
+          <div className=" col-xl-3 col-sm-6  " key={p.id}>
             <div className="product-wrap">
               <CardItem
                p={p}
@@ -96,6 +96,11 @@ const Shop_Bottom_Area = styled.div`
 
           max-width: 50%;
         }
+        @media ${xxs} {
+          flex: 1 0 100%;
+
+          max-width: 100%;
+        }
         .shop-list-wrap {
           display: none;
         }
@@ -125,6 +130,11 @@ const Shop_Bottom_Area = styled.div`
 
         max-width: 50%;
       }
+      @media ${xxs} {
+          flex: 1 0 100%;
+
+          max-width: 100%;
+        }
       .shop-list-wrap {
         display: none;
       }

@@ -132,7 +132,7 @@ const ProductModal = ({
                   <p>{description}</p>
                 </div>
                 <div className="pro-details-color-wrap">
-                  <span className="title-wrap">Color</span>
+                  <span className="title-wrap">Màu</span>
                   <div className="pro-details-color-content">
                     <Radio.Group name="radiogroup" defaultValue={1}>
                       <Radio
@@ -163,7 +163,7 @@ const ProductModal = ({
                   </div>
                 </div>
                 <div className="pro-details-size-wrap">
-                  <span className="title-wrap">Size</span>
+                  <span className="title-wrap">Kích thước</span>
                   <div className="pro-details-size-content">
                     <Radio.Group buttonStyle="solid" defaultValue={1}>
                       <Radio.Button
@@ -329,7 +329,7 @@ cursor: pointer;
       font-size: 1.4rem;
    }
   &.funfact-btn-red {
-    background-color: #c61a32;
+    background-color: #ff4d4f;
       &:hover {
         border: 1px solid ${theme_color};
       }

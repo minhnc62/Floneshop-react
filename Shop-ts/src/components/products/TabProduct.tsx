@@ -97,7 +97,7 @@ const TabProduct = () => {
               })}
                 </div>
             </TabPane>
-            <TabPane tab="Sale" key="3">
+            <TabPane tab="Giảm giá" key="3">
             <div className="row">
                 {newProductSale.map((p:productState)=>{
                   return(<div className=" col-xl-3 col-sm-6 col-12" key={p.id}>

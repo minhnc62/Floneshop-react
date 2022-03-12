@@ -72,7 +72,7 @@ const CountDownPromotion = () => {
     <Funfact_Area className="pt-100 pb-100">
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-md-8 col-lg-6 order-1 order-lg-2">
+          <div className="col-md-8 col-lg-6 order-1 order-lg-2 mb-2">
             <div className="funfact-content funfact-res text-center">
               <h2>Ưu đãi trong ngày</h2>
               <div className="timer">

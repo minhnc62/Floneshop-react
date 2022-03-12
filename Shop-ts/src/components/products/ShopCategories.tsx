@@ -52,13 +52,13 @@ export const Sidebar_Categorie = styled(Sidebar_widget)`
 `;
 interface categoriState {
   getSortParams: any;
+  categories: any;
 }
-const ShopCategories = ({ getSortParams }: categoriState) => {
-  const { products } = useAppSelector(selectProductApi);
-
+const ShopCategories = ({ getSortParams, categories }: categoriState) => {
+  
   return (
     <Sidebar_Categorie>
-      <h4 className="pro-sidebar-title">Categories </h4>
+      <h4 className="pro-sidebar-title">Loại </h4>
       <div className="sidebar-widget-list ">
         <ul>
           <li>
@@ -70,55 +70,59 @@ const ShopCategories = ({ getSortParams }: categoriState) => {
                     getSortParams("category", "");
                   }}
                 >
-                  All Categories
+                  Tất cả
                 </Checkbox>
               </button>
             </div>
           </li>
-          <li>
-            <div className="sidebar-widget-list-left">
-              {/* {products.map((product: productState) => {
-                product.categori &&
-                  product.categori.map((single: string) => {
-                    return <Checkbox
-                    onClick={() => {
-                      getSortParams("category", single);
-                      
-                    }}
-                  >
-                    men
-                  </Checkbox>;
-                  });
-              })} */}
-              <button>
-                {/* <span className="checkmark" /> All Categories */}
+
+          {categories.map((single: string, index:any) => {
+            return (
+            
+                <li key={index}>
+                  <div className="sidebar-widget-list-left">
+                    <button>
+                    <Checkbox
+                      onClick={() => {
+                        getSortParams("category", single);
+                      }}
+                    >
+                      {single}
+                    </Checkbox>
+                    </button>
+                    
+                  </div>
+                </li>
+          
+            );
+          })}
+          {/* <button>
+                
                 <Checkbox
                   onClick={() => {
-                    getSortParams("category", "");
+                    getSortParams("category", "nam");
                   }}
                 >
-                  Men
+                  Nam
                 </Checkbox>
-              </button>
-            </div>
-            
-          </li>
-          <li>
+              </button> */}
+
+          {/* <li>
             <div className="sidebar-widget-list-left">
               
               <button>
                
                 <Checkbox
                   onClick={() => {
-                    getSortParams("category", "");
+                    getSortParams("category", "nữ");
                   }}
                 >
-                  Women
+                  Nữ
                 </Checkbox>
               </button>
             </div>
             
-          </li>
+          </li> */}
         </ul>
       </div>
     </Sidebar_Categorie>
@@ -129,4 +133,3 @@ export default ShopCategories;
 function categori(categori: any) {
   throw new Error("Function not implemented.");
 }
-

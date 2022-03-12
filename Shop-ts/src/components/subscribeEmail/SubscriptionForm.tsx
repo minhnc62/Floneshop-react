@@ -8,7 +8,7 @@ const Subscribe_Form = styled.div`
     position: relative;
     input {
       height: 46px;
-      max-width: 50rem;
+      width: 50rem;
       font-size: 1.4rem;
       text-align: center;
 
@@ -16,6 +16,9 @@ const Subscribe_Form = styled.div`
       border: none;
       border-bottom: 2px solid #e2e2e2;
       background: transparent;
+      @media ${xs} {
+        width: 30rem;
+      }
       &:focus {
         outline: 0;
       }
@@ -64,7 +67,7 @@ const Subscribe_Form = styled.div`
     }
     .funfact-btn-red {
       button {
-        background-color: #c61a32;
+        background-color: #ff4d4f;
         &:hover {
           border: 1px solid ${theme_color};
         }
@@ -138,7 +141,7 @@ const CustomForm = ({ status, onValidated, message }: formSubscribeState) => {
             className="email"
             ref={(node): any => (email = node)}
             type="email"
-            placeholder="Your Email Address"
+            placeholder="Nhập email của bạn"
             required
           />
         </div>
@@ -146,7 +149,7 @@ const CustomForm = ({ status, onValidated, message }: formSubscribeState) => {
           <div style={{ color: "#3498db", fontSize: "1.4rem" }}>sending...</div>
         )}
         {status === "error" && (
-          <div style={{ color: "#e74c3c", fontSize: "1.4rem" }}>
+          <div style={{ color: "#ff4d4f", fontSize: "1.4rem" }}>
             <span>{message}</span>
           </div>
         )}
@@ -157,7 +160,7 @@ const CustomForm = ({ status, onValidated, message }: formSubscribeState) => {
         )}
         <div className="clear-3 funfact-btn funfact-btn--round-shape funfact-btn-red btn-hover ">
           <button className="button" onClick={submit}>
-            SUBSCRIBE
+          Đăng ký
           </button>
         </div>
       </div>

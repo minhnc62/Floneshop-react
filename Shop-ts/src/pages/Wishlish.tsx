@@ -1,17 +1,17 @@
 import styled from "styled-components";
-import { addWishlish,  clearwishlish,  remove, selectwishlish } from "../redux/wishlishSlice";
+import {  clearwishlish,  remove, selectwishlish } from "../redux/wishlishSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { wishlishState } from "../redux/wishlishSlice";
 import { Breadcrumb } from "antd";
 import { Link } from "react-router-dom";
 import { Empty } from "antd";
 import { lg, theme_color, xs } from "../rootStyledComponent";
-import { productState } from "../redux/productSlice";
+
 import { useEffect, useState } from "react";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import BtnCart from "../components/button/BtnCart";
-import BtnProduct from "../components/button/BtnProduct";
+
 
 
 const Wishlish_Area = styled.div`
@@ -152,7 +152,7 @@ const Wishlish_Area = styled.div`
 const Wishlish = () => {
 
   const dispatch = useAppDispatch()
-  const wishlish: [] = useAppSelector(selectwishlish);
+  const wishlish:[] = useAppSelector(selectwishlish);
  
   useEffect(() => {
     window.scrollTo(0,0)
@@ -192,7 +192,7 @@ const Wishlish = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {wishlish.map((item: wishlishState, key): any => {
+                      {wishlish.map((item: wishlishState, key: any )=> {
                         return (
                           <tr key={key}>
                             <td className="product-thumbnail">
@@ -264,7 +264,7 @@ const Wishlish = () => {
                     className="cart-clear "
                     onClick={() => dispatch(clearwishlish())}
                   >
-                    <BtnCart src="" btnName="Xóa giỏ hàng" />
+                    <BtnCart src="" btnName="Xóa mục yêu thích" />
                   </div>
                 </div>
               </div>

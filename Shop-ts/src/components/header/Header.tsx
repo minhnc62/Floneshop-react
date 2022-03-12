@@ -20,7 +20,6 @@ const Headers = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-
   border-bottom: 0 solid #4a90e2;
   background-color: #fff;
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.06);
@@ -144,7 +143,7 @@ const menu = (
 );
 const menuUser = (
   <Menu>
-    <Menu.Item key="0">
+    
       <Menu.Item key="0">
         <Link to={"/login"}> Đăng nhập</Link>
       </Menu.Item>
@@ -152,10 +151,10 @@ const menuUser = (
         <Link to={"/login"}> Đăng Ký</Link>
       </Menu.Item>
       <Menu.Divider />
-      <Menu.Item key="3">
+      <Menu.Item key="2">
         <Link to={"/login"}> Tài khoản của tôi</Link>
       </Menu.Item>
-    </Menu.Item>
+   
   </Menu>
 );
 
@@ -189,13 +188,13 @@ const Header = () => {
               <nav>
                 <NavUl>
                   <li>
-                    <NavLinkPage to={"/"}>Home </NavLinkPage>
+                    <NavLinkPage to={"/"}>Trang chủ </NavLinkPage>
                   </li>
                   <li>
                     <NavLinkPage to={"/shop"}>Cửa Hàng</NavLinkPage>
                   </li>
                   <li>
-                    <NavLinkPage to={"/about"}>Gioi Thieu</NavLinkPage>
+                    <NavLinkPage to={"/about"}>Giới Thiệu</NavLinkPage>
                   </li>
                   <li>
                     <NavLinkPage to={"/contact"}>Liên Hệ</NavLinkPage>

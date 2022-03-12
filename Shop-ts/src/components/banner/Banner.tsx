@@ -5,7 +5,7 @@ import {
   faArrowLeftLong,
 } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
-import { lg, md, xs } from "../../rootStyledComponent";
+import { lg, md, sm, xs, xxs } from "../../rootStyledComponent";
 
 const Banner_area = styled.div`
   .no-gutters {
@@ -35,9 +35,15 @@ const Banner_area = styled.div`
         top: 50%;
         left: 40px;
         transform: translateY(-50%);
-        @media ${xs} {
-          left: 2rem;
-        }
+        text-align: left;
+        /* @media ${sm} {
+          left: 9rem;
+          text-align:center
+        } */
+        /* @media ${xxs} {
+          left: 9rem;
+          text-align:center
+        } */
         h3 {
           font-family: "Cormorant Garamond";
           font-size: 3.6rem;
@@ -83,9 +89,14 @@ const Banner_area = styled.div`
         left: auto;
         transform: translateY(-50%);
         text-align: right;
-        @media ${xs} {
+        /* @media ${sm} {
           left: 2rem;
-        }
+          text-align: center;
+        } */
+        /* @media ${xxs} {
+          left: 2rem;
+          text-align: center;
+        } */
         h3 {
           font-family: "Cormorant Garamond";
           font-size: 3.6rem;
@@ -134,9 +145,9 @@ const Banner = () => {
             <Link to={"/shop"}>
               <img src="image/banner/banner-4.jpg" alt="banner" />
             </Link>
-            <div className="banner-content-2 ">
-              <h3>Men Fashion Shop</h3>
-              <h4>Choose Your Products Here</h4>
+            <div className="banner-content-2  ">
+              <h3>Thời trang nam</h3>
+              <h4>Chọn sản phẩm của bạn</h4>
               <Link to={"/shop"}>
                 <FontAwesomeIcon icon={faArrowRightLong} />
               </Link>
@@ -149,8 +160,8 @@ const Banner = () => {
               <img src="image/banner/banner-5.jpg" alt="banner" />
             </Link>
             <div className="banner-content-2 ">
-              <h3>Men Fashion Shop</h3>
-              <h4>Choose Your Products Here</h4>
+              <h3>Thời trang nữ</h3>
+              <h4>Chọn sản phẩm của bạn</h4>
               <Link to={"/shop"}>
                 <FontAwesomeIcon icon={faArrowLeftLong} />
               </Link>

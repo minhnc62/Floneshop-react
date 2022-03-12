@@ -17,8 +17,8 @@ interface sidebarState {
 const ShopSidebar = ({ products,getSortParams }: sidebarState) => {
 
    const uniqueCategories = getIndividualCategories(products);
-  // const uniqueColors = getIndividualColors(products);
-  // const uniqueSizes = getProductsIndividualSizes(products);
+   const uniqueColors = getIndividualColors(products);
+   const uniqueSizes = getProductsIndividualSizes(products);
   
   return (
     <Sidebar>
@@ -26,9 +26,12 @@ const ShopSidebar = ({ products,getSortParams }: sidebarState) => {
       <ShopSearch />
 
       <ShopCategories 
+      categories={uniqueCategories}
         getSortParams={getSortParams}/>
-      <ShopColor />
-      <ShopSize />
+      <ShopColor colors={uniqueColors}
+        getSortParams={getSortParams}/> 
+      <ShopSize sizes={uniqueSizes}
+        getSortParams={getSortParams}/> 
     </Sidebar>
   );
 };

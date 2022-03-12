@@ -6,7 +6,7 @@ export  const getSortedProducts = (products: any, sortType: any, sortValue: any)
     if (products && sortType && sortValue) {
       if (sortType === "category") {
         return products.filter(
-          (product:productState) => product.categori.filter((single:string) => single === sortValue)[0]
+          (product:productState) => product.category.filter((single:any) => single === sortValue)[0]
         );
       }
       
@@ -54,8 +54,8 @@ const getIndividualItemArray = (array:any) => {
     products &&
       products.map((product:productState) => {
         return (
-          product.categori &&
-          product.categori.map((single :any)=> {
+          product.category &&
+          product.category.map((single :string)=> {
             return productCategories.push(single);
           })
         );
@@ -85,8 +85,8 @@ export const getProductsIndividualSizes = (products:any) => {
   products &&
     products.map((product:productState) => {
       return (
-        product.color &&
-        product.color.map((single :any)=> {
+        product.size &&
+        product.size.map((single :any)=> {
           return productSizes.push(single);
         })
       );

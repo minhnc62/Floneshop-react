@@ -75,7 +75,7 @@ const ShopSearch = () => {
   };
   return (
     <Sidebar_widget>
-      <h4 className="pro-sidebar-title">Search </h4>
+      <h4 className="pro-sidebar-title">Tìm kiếm </h4>
       <Sidebsr_Search>
         {/* <form
           className="pro-sidebar-search-form"
@@ -96,7 +96,7 @@ const ShopSearch = () => {
           {error && <span className="error"> Không có sản phẩm nào</span>}
         </form> */}
         <Search
-          placeholder="Search here..."
+          placeholder="Tìm kiếm..."
           onSearch={title}
           onChange={handleChange}
           style={{ width: 200 }}

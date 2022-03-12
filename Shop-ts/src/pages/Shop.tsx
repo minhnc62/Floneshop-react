@@ -45,11 +45,8 @@ useEffect(() => {
   const filterSortedProducts = getSortedProducts(sortedProducts, filterSortType, filterSortValue);
   sortedProducts = filterSortedProducts;
   setSortedProducts(sortedProducts);
-  
-}, [ products, sortType, sortValue, filterSortType, filterSortValue ]);
-useEffect(() => {
   window.scrollTo(0,0)
-}, [products])
+}, [ products, sortType, sortValue, filterSortType, filterSortValue ]);
 
   return (
     <Shop_Area>
