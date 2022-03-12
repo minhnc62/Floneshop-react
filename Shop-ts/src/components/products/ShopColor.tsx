@@ -17,27 +17,31 @@ const ShopColor = ({ getSortParams, colors }: colorState) => {
           <li>
             <div className="sidebar-widget-list-left">
               <button>
-                <Checkbox>Tất cả</Checkbox>
+                <Checkbox
+                  onClick={() => {
+                    getSortParams("size", "");
+                  }}
+                >
+                  Tất cả
+                </Checkbox>
               </button>
             </div>
           </li>
-          {colors.map((single: string,index:any) => {
+          {colors.map((single: string, index: any) => {
             return (
-              
-                <li key={index}>
-                  <div className="sidebar-widget-list-left">
-                    <button>
-                      <Checkbox
-                        onClick={() => {
-                          getSortParams("color", single);
-                        }}
-                      >
-                        {single}
-                      </Checkbox>
-                    </button>
-                  </div>
-                </li>
-              
+              <li key={index}>
+                <div className="sidebar-widget-list-left">
+                  <button>
+                    <Checkbox
+                      onClick={() => {
+                        getSortParams("color", single);
+                      }}
+                    >
+                      {single}
+                    </Checkbox>
+                  </button>
+                </div>
+              </li>
             );
           })}
         </ul>

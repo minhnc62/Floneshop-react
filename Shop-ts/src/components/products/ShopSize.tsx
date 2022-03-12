@@ -19,7 +19,9 @@ const ShopSize = ({ getSortParams, sizes }: sizeState) => {
           <li>
             <div className="sidebar-widget-list-left">
               <button>
-                <Checkbox>Tất cả</Checkbox>
+                <Checkbox onClick={() => {
+                          getSortParams("size", "");
+                        }}>Tất cả</Checkbox>
               </button>
             </div>
           </li>
